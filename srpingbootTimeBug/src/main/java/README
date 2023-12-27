@@ -1,0 +1,13 @@
+     这是一个很低级的bug，Timestamp 的s是小写
+import java.sql.Timestamp;
+花了很长时间才看出来
+在mybatisplus里面实体类里面的驼峰命名法的大写，在数据库里面表示一个下画线
+example：
+//用户实体类
+class users  {
+    private String userName;  -->  user_name
+    private Integer userAge;  -->  user_age
+    private Integer pwd;
+}
+
+*在数据库里面不能使用驼峰命名法，只能使用下划线命名法
